@@ -308,6 +308,7 @@ function card(markers, element) {
         if (element.optionalInfos[i] != '' && element.optionalInfos[i]["val"] != '') {
             // On parcours cette élément
             for (var a in element.optionalInfos[i]) {
+                
                 if (a === "icone") {
                     var picto = new Image();
                     picto.src = element.optionalInfos[i][a];

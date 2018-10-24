@@ -154,6 +154,7 @@ section {
     width: 50%;
     height: 500px;
     padding: 40px;
+    overflow: hidden;
 }
 
 .img-smartphone {
@@ -161,10 +162,16 @@ section {
     margin: auto;
 }
 
+.img-screen-2 {
+    width: 350px;
+    margin: auto;
+
+}
+
 .wrapper-feature-2 .content-left {
     position: relative;
     border-radius: 3px;
-    background-color: #E8635B;
+    background-color: #f1bb41;
     justify-content: start;
     overflow: hidden;
     margin-right: 10px;
@@ -175,4 +182,8 @@ section {
     background-color: #F4F4F4;
     margin-left: 10px;
     justify-content: unset;
+}
+
+.subtitle {
+    margin-bottom: 30px;
 }
