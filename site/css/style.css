@@ -153,37 +153,33 @@ section {
     justify-content: center;
     width: 50%;
     height: 500px;
-    padding: 40px;
+    padding: 20px 40px;
     overflow: hidden;
 }
 
 .img-smartphone {
-    width: fit-content;
+    width: 300px;
+    height: 540px;
     margin: auto;
 }
 
 .img-screen-2 {
-    width: 350px;
+    width: 450px;
     margin: auto;
-
-}
-
-.wrapper-feature-2 .content-left {
-    position: relative;
-    border-radius: 3px;
-    background-color: #f1bb41;
-    justify-content: start;
-    overflow: hidden;
-    margin-right: 10px;
-}
-
-.wrapper-feature-2 .content-right {
-    border-radius: 3px;
-    background-color: #F4F4F4;
-    margin-left: 10px;
-    justify-content: unset;
 }
 
 .subtitle {
     margin-bottom: 30px;
+}
+
+.img-btn-store {
+    width: 180px;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    margin: 40px;
+}
+
+b {
+    text-decoration: underline;
 }

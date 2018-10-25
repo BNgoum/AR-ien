@@ -16,7 +16,7 @@ var downloadCanvas = document.getElementById('downloadCanvas');
 var listeUsers = [
     {
         markerId : 0,
-        avatar : '../img/feuille.jpg',
+        avatar : '../img/psg_2.jpg',
         firstName : 'Benjamin',
         lastName : 'NGOUM',
         filiere : 'Développement Web',
@@ -46,31 +46,31 @@ var listeUsers = [
     },
     {
         markerId : 1,
-        firstName : 'Lisa',
-        lastName : 'Comelli',
-        filiere : 'Webdesign',
+        firstName : 'Jean',
+        lastName : 'Dupont',
+        filiere : 'Développement Web',
         annee : 'Mastère 2',
-        avatar : '../img/donuts.jpg',
+        avatar : '../img/applemac.jpg',
         optionalInfos : {
             age: {
-                icone: '../img/cake.png',
-                val: '23 ans',
+                icone: '../img/hobby.png',
+                val: 'Node.js',
             },
             relationShipStatus: {
-                icone: '../img/relationship.png',
-                val: 'En couple',
+                icone: '../img/hobby.png',
+                val: 'React js',
             },
             hobby: {
                 icone: '../img/hobby.png',
-                val: 'Manger',
+                val: 'HTML5 / CSS3',
             },
             telephone: {
-                icone: '../img/mobile.png',
-                val: '',
+                icone: '../img/hobby.png',
+                val: 'Vue js',
             },
             email: {
                 icone: '../img/email.png',
-                val: '',
+                val: 'jean.dupont@ecv.fr',
             },
         }
     },
@@ -297,7 +297,7 @@ function card(markers, element) {
     context.font = "18px Arial";
     context.fillText(element.filiere, (posXBandeau + 30), posYBandeau + 160);
 
-    // Bandeau de séparation 
+    // Bandeau de séparation
     context.fillRect(posXBandeau + 30, posYBandeau + 180, 170, 5);
 
     var posYOptionalInfos = 210;
@@ -308,16 +308,33 @@ function card(markers, element) {
         if (element.optionalInfos[i] != '' && element.optionalInfos[i]["val"] != '') {
             // On parcours cette élément
             for (var a in element.optionalInfos[i]) {
-                
-                if (a === "icone") {
-                    var picto = new Image();
-                    picto.src = element.optionalInfos[i][a];
-                    var widthPicto = 24;
-                    var heightPicto = 24;
-                    context.drawImage(picto, (posXBandeau + 30), posYBandeau + posYOptionalInfos - heightPicto + 5, widthPicto, heightPicto);
-                } else if ( a === "val" ) {
-                    context.fillText(element.optionalInfos[i][a], (posXBandeau + 60), posYBandeau + posYOptionalInfos);
+                if ( i === "email") {
+                    if (a === "icone") {
+                        var picto = new Image();
+                        picto.src = element.optionalInfos[i][a];
+                        var widthPicto = 24;
+                        var heightPicto = 24;
+                        context.drawImage(picto, (posXBandeau + 30), posYBandeau + posYOptionalInfos - heightPicto + 5, widthPicto, heightPicto);
+                    } else if ( a === "val" ) {
+                        var lines = element.optionalInfos[i][a].split(/(?=@)/g);
+
+                        for (var ite = 0 ; ite < lines.length ; ite++) {
+                            context.fillText(lines[ite], (posXBandeau + 60), posYBandeau + posYOptionalInfos);
+                            posYOptionalInfos += 20
+                        }
+                    }
+                } else {
+                    if (a === "icone") {
+                        var picto = new Image();
+                        picto.src = element.optionalInfos[i][a];
+                        var widthPicto = 24;
+                        var heightPicto = 24;
+                        context.drawImage(picto, (posXBandeau + 30), posYBandeau + posYOptionalInfos - heightPicto + 5, widthPicto, heightPicto);
+                    } else if ( a === "val" ) {
+                        context.fillText(element.optionalInfos[i][a], (posXBandeau + 60), posYBandeau + posYOptionalInfos);
+                    }
                 }
+                
                 
             //     if (i === "email") {
             //     var lines = a.split(/(?=@)/g);
